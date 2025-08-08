@@ -23,8 +23,8 @@ const Cart = () => {
     );
   };
 
-  const addItem = (product) => {
-    dispatch(addCart(product));
+  const addItem = (product, selectedVariant) => {
+    dispatch(addCart(product, selectedVariant));
   };
   const removeItem = (product) => {
     dispatch(delCart(product));
@@ -63,7 +63,6 @@ const Cart = () => {
                               >
                                 <img
                                   src={item.image}
-                                  // className="w-100"
                                   alt={item.title}
                                   width={100}
                                   height={75}
@@ -75,8 +74,13 @@ const Cart = () => {
                               <p>
                                 <strong>{item.title}</strong>
                               </p>
-                              {/* <p>Color: blue</p>
-                              <p>Size: M</p> */}
+                              <div className="mt-2" style={{ maxWidth: 180 }}>
+                                <label className="variant-label">Variant</label>
+                                <div className="form-control form-control-sm bg-light">
+                                  {item.selectedVariant ?? item.variants?.[0] ?? "N/A"}
+                                </div>
+                              </div>
+
                             </div>
 
                             <div className="col-lg-4 col-md-6">

@@ -1,0 +1,56 @@
+/* Media area stays consistent */
+.product-media {
+    height: 260px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px;
+    background: #fff;
+}
+
+@media (max-width: 576px) {
+    .product-media {
+        height: 200px;
+    }
+}
+
+.clamp-2,
+.clamp-3 {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.clamp-2 {
+    -webkit-line-clamp: 2;
+}
+
+.clamp-3 {
+    -webkit-line-clamp: 3;
+}
+
+.product-card-footer {
+    margin-top: auto;
+    padding: 12px;
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+}
+
+.variant-select {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    min-width: 128px;
+    font-size: 0.75rem;
+    padding: 2px 26px 2px 8px;
+    border-radius: 6px;
+    border: 1px solid #dee2e6;
+    background: #fff no-repeat right .5rem center;
+    background-size: 12px 12px;
+    z-index: 3;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url("data:image/svg+xml;utf8,<svg fill='none' stroke='%23333' stroke-width='2' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><path d='M6 9l6 6 6-6'/></svg>");
+}

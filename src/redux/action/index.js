@@ -1,8 +1,11 @@
 // For Add Item to Cart
-export const addCart = (product) =>{
+export const addCart = (product, selectedVariant = null) =>{
     return {
         type:"ADDITEM",
-        payload:product
+        payload: {
+            ...product,
+            selectedVariant: selectedVariant ?? product.selectedVariant ?? null,
+        }
     }
 }
 

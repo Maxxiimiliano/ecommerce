@@ -1,0 +1,109 @@
+
+.product-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.product-card .card-title {
+    min-height: 3em;
+}
+
+.product-card-footer {
+    margin-top: auto;
+}
+
+.product-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15);
+}
+
+.product-media {
+    height: 340px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    background: #fff;
+}
+
+@media (max-width: 576px) {
+    .product-media {
+        height: 280px;
+    }
+}
+
+.product-media img {
+    max-height: 100%;
+    max-width: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+}
+
+.variant-select {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    min-width: 128px;
+    font-size: 0.75rem;
+    padding: 2px 26px 2px 8px;
+    border-radius: 6px;
+    border: 1px solid #dee2e6;
+    background: #fff no-repeat right .5rem center;
+    background-size: 12px 12px;
+    z-index: 3;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url("data:image/svg+xml;utf8,<svg fill='none' stroke='%23333' stroke-width='2' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><path d='M6 9l6 6 6-6'/></svg>");
+}
+
+.clamp-2,
+.clamp-3 {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.clamp-2 {
+    -webkit-line-clamp: 2;
+}
+
+.clamp-3 {
+    -webkit-line-clamp: 3;
+}
+
+.variant-label {
+    display: block;
+    font-size: .75rem;
+    font-weight: 600;
+    letter-spacing: .02em;
+    text-transform: uppercase;
+    color: #6c757d;
+    margin-bottom: 4px;
+}
+
+.shelf {
+    display: flex;
+    gap: 16px;
+    overflow-x: auto;
+    padding: 8px 4px 12px;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+}
+
+.shelf::-webkit-scrollbar {
+    height: 8px;
+}
+
+.shelf::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, .15);
+    border-radius: 4px;
+}
+
+.shelf .product-card {
+    scroll-snap-align: start;
+    flex: 0 0 auto;
+    width: 320px;
+}
